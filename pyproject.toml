@@ -1,0 +1,16 @@
+[project]
+name = "test1"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp-agent>=0.1.0",
+    # Optional: Add specific LLM providers you want to use
+    "openai>=1.0.0",          # For OpenAI models
+    "anthropic>=0.40.0",      # For Claude models
+    # Optional: Add other useful libraries
+    "python-dotenv>=1.0.0",   # For environment variable management
+    "pydantic>=2.0.0",        # For structured data (often used with mcp-agent)
+    "asyncio-mqtt>=0.16.0",   # If you need MQTT integration
+]

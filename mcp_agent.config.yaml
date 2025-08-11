@@ -1,0 +1,26 @@
+execution_engine: asyncio
+logger:
+  transports: [console]
+  level: debug
+  path: "logs/mcp-agent.jsonl"
+
+mcp:
+  servers:
+    fetch:
+      command: "uvx"
+      args: ["mcp-server-fetch"]
+      description: "Fetch content from URLs"
+    
+    filesystem:
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-filesystem", "./"]
+      description: "File system operations"
+    
+    # Optional: Memory server for persistent storage
+    memory:
+      command: "npx" 
+      args: ["-y", "@modelcontextprotocol/server-memory"]
+      description: "Persistent memory storage"
+
+openai:
+  default_model: "US Claude 3.7 Sonnet By Anthropic (Served via LiteLLM)"
